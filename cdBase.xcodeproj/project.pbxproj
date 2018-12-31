@@ -62,9 +62,17 @@
 				6364651F21DA1BFF0034C81C /* Assets.xcassets */,
 				6364652121DA1BFF0034C81C /* LaunchScreen.storyboard */,
 				6364652421DA1BFF0034C81C /* Info.plist */,
-				6364651C21DA1BFD0034C81C /* cdBase.xcdatamodeld */,
+				6364652A21DA1D1C0034C81C /* data */,
 			);
 			path = cdBase;
+			sourceTree = "<group>";
+		};
+		6364652A21DA1D1C0034C81C /* data */ = {
+			isa = PBXGroup;
+			children = (
+				6364651C21DA1BFD0034C81C /* cdBase.xcdatamodeld */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
