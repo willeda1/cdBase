@@ -17,8 +17,7 @@ class ViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let person = Person(context: context)
-        print("class = \(type(of:person))\n\(person)")
-
+        person.info()
     }
 
 

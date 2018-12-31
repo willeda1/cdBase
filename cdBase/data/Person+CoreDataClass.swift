@@ -13,4 +13,8 @@ import CoreData
 @objc(Person)
 public class Person: NSManagedObject {
 
+    func info(){
+       print("class = \(type(of:self))\n\(self)")
+    }
+    
 }
