@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import CoreData
+
+// might be better
 
 class TvcDemo: UITableViewController {
-
+    
+    private let context=(UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let request = NSFetchRequest<Person>(entityName:"Person")
+    lazy var frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,29 +25,43 @@ class TvcDemo: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        request.sortDescriptors=[NSSortDescriptor(key: "name", ascending: true)]
+        
+        frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+            return 0
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+//        return frc.sections![0].numberOfObjects
+        guard let sections = frc.sections else {
+            fatalError("No sections in fetchedResultsController")
+        }
+        let sectionInfo = sections[section]
+        print("hi")
+        print(sectionInfo.numberOfObjects)
+        return sectionInfo.numberOfObjects
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        
+        cell.textLabel?.text="hello"
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
