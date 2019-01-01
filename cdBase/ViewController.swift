@@ -10,12 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let context=(UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         let person = Person(context: context)
         person.info()
     }
