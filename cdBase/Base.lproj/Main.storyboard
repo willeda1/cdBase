@@ -79,6 +79,20 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OsI-Hb-OdS" id="jt5-fH-NgB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HW3-O9-NyF">
+                                            <rect key="frame" x="20" y="11" width="335" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HW3-O9-NyF" firstAttribute="top" secondItem="jt5-fH-NgB" secondAttribute="top" constant="11" id="7er-5o-riv"/>
+                                        <constraint firstAttribute="bottom" secondItem="HW3-O9-NyF" secondAttribute="bottom" constant="11" id="H6D-ZA-Qbs"/>
+                                        <constraint firstAttribute="trailing" secondItem="HW3-O9-NyF" secondAttribute="trailing" constant="20" symbolic="YES" id="ldW-SQ-L47"/>
+                                        <constraint firstItem="HW3-O9-NyF" firstAttribute="leading" secondItem="jt5-fH-NgB" secondAttribute="leading" constant="20" symbolic="YES" id="sZ4-Ox-ahO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

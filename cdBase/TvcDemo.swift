@@ -66,8 +66,10 @@ class TvcDemo: UITableViewController {
 
         // Configure the cell...
 
-        let person = frc.object(at: indexPath)
-        cell.textLabel?.text=person.name
+        if let label = cell.viewWithTag(1000) as? UILabel {
+            let person = frc.object(at: indexPath)
+            label.text=person.name
+        }
         return cell
     }
     
