@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @IBAction func add(_ sender: Any) {
         let person = Person(context: context)
         person.name = "david @ \(Date())"
+        person.date=Date()
         display.text="\([Person]())"
         updateDisplay()
     }

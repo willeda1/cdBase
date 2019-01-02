@@ -34,7 +34,7 @@ class TvcDemo: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        request.sortDescriptors=[NSSortDescriptor(key: "name", ascending: true)]
+        request.sortDescriptors=[NSSortDescriptor(key: "date", ascending: true)]
                 
         frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         updateFrc()
@@ -97,12 +97,18 @@ class TvcDemo: UITableViewController {
     }
     
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+       let fromObj=frc.object(at: fromIndexPath)
+       let toObj=frc.object(at: to)
+       let temp=fromObj.date
+       fromObj.date=toObj.date
+       toObj.date=temp
+        do {try context.save()}
+        catch {print("could not save")}
+       updateFrc()
     }
-    */
+
 
     /*
     // Override to support conditional rearranging of the table view.
