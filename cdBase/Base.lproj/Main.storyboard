@@ -92,6 +92,30 @@
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="275"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="separatorColor" red="0.98039215690000003" green="0.066666666669999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="table1" id="eyE-tw-CAl">
+                                                <rect key="frame" x="0.0" y="28" width="353" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eyE-tw-CAl" id="PDD-Xc-1DF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBB-Ts-qUv">
+                                                            <rect key="frame" x="20" y="11" width="313" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="vBB-Ts-qUv" secondAttribute="bottom" constant="11" id="0Rp-Nq-YuT"/>
+                                                        <constraint firstItem="vBB-Ts-qUv" firstAttribute="top" secondItem="PDD-Xc-1DF" secondAttribute="top" constant="11" id="Ptm-kv-QnX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vBB-Ts-qUv" secondAttribute="trailing" constant="20" symbolic="YES" id="qFy-UM-Bh0"/>
+                                                        <constraint firstItem="vBB-Ts-qUv" firstAttribute="leading" secondItem="PDD-Xc-1DF" secondAttribute="leading" constant="20" symbolic="YES" id="twx-m2-BtJ"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3vj-bH-8lN">
                                         <rect key="frame" x="0.0" y="306" width="353" height="275"/>

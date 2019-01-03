@@ -13,6 +13,8 @@ import CoreData
 
 class TvcTable: UITableViewController {
     
+    let resuseId = "table1"
+    
     private let context=(UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let request = NSFetchRequest<Person>(entityName:"Person")
     lazy var frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -25,8 +27,18 @@ class TvcTable: UITableViewController {
         }
     }
     
+    func configure(){
+        print("setup1")
+        request.sortDescriptors=[NSSortDescriptor(key: "date", ascending: true)]
+        
+        frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        updateFrc()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("setup2")
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -62,7 +74,7 @@ class TvcTable: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "people", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: resuseId, for: indexPath)
 
         // Configure the cell...
 
