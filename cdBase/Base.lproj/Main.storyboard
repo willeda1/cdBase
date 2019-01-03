@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Vc Table2-->
         <scene sceneID="4ad-l8-tk7">
             <objects>
-                <viewController id="u1S-zG-VRe" sceneMemberID="viewController">
+                <viewController id="u1S-zG-VRe" customClass="VcTable2" customModule="cdBase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qmj-rU-fF7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
