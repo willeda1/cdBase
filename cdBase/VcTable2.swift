@@ -9,14 +9,22 @@
 import UIKit
 
 class VcTable2: UIViewController {
+    
+    
+    @IBOutlet weak var table1: UITableView!
+    @IBOutlet weak var table2: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let tvc1 = TvcTable()
+  //      let tvc2 = TvcTable()
+        
+        table1.dataSource=tvc1
+        table2.delegate=tvc1
+
     }
     
 
- 
-
+    
 }
