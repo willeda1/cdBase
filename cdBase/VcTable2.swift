@@ -22,12 +22,12 @@ class VcTable2: UIViewController {
         super.viewDidLoad()
         
         
-        tvc1.configure(queue:"table1")
+        tvc1.configure(queue:"table1", up: true)
   //      let tvc2 = TvcTable()
         table1.dataSource=tvc1
         table1.delegate=tvc1
         
-            tvc2.configure(queue:"table2")
+        tvc2.configure(queue:"table2", up: false)
         table2.dataSource=tvc2
         table2.delegate=tvc2
 
