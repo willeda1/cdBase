@@ -21,7 +21,7 @@ class VcTable2: UIViewController {
   //      let tvc2 = TvcTable()
         
         table1.dataSource=tvc1
-        table2.delegate=tvc1
+        table1.delegate=tvc1
 
     }
     
