@@ -16,7 +16,6 @@ class VcTable2: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("loaded")
         
         let tvc1 = TvcTable()
         tvc1.configure()
