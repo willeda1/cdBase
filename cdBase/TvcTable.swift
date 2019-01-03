@@ -13,7 +13,7 @@ import CoreData
 
 class TvcTable: UITableViewController {
     
-    let resuseId = "table1"
+    var resuseId = "table"
     
     private let context=(UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let request = NSFetchRequest<Person>(entityName:"Person")
@@ -27,7 +27,8 @@ class TvcTable: UITableViewController {
         }
     }
     
-    func configure(){
+    func configure(queue reuseId : String){
+        self.resuseId=reuseId
         print("setup1")
         request.sortDescriptors=[NSSortDescriptor(key: "date", ascending: true)]
         

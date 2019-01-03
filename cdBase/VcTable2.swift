@@ -13,16 +13,23 @@ class VcTable2: UIViewController {
     
     @IBOutlet weak var table1: UITableView!
     @IBOutlet weak var table2: UITableView!
+    
+    var tvc1 = TvcTable()
+    var tvc2 = TvcTable()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tvc1 = TvcTable()
-        tvc1.configure()
-  //      let tvc2 = TvcTable()
         
+        tvc1.configure(queue:"table1")
+  //      let tvc2 = TvcTable()
         table1.dataSource=tvc1
         table1.delegate=tvc1
+        
+            tvc2.configure(queue:"table2")
+        table2.dataSource=tvc2
+        table2.delegate=tvc2
 
     }
     
