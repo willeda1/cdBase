@@ -9,12 +9,19 @@
 import UIKit
 import CoreData
 
-class SearchBarTableTableViewController: UITableViewController {
+class SearchBarTableTableViewController: UITableViewController, UISearchBarDelegate {
 
     private let appDelegate=UIApplication.shared.delegate as! AppDelegate
     private let context=(UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let request = NSFetchRequest<Person>(entityName:"Person")
     lazy var frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    // MARK: search bar delegate
+    
+   
+    // MARK: rest of code
     
     func save(){
         appDelegate.saveContext()
@@ -39,6 +46,8 @@ class SearchBarTableTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        searchBar.delegate=self
         
         request.sortDescriptors=[NSSortDescriptor(key: "date", ascending: true)]
         
