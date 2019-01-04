@@ -16,10 +16,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var display: UITextView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         updateDisplay()
     }
+    
     
     func randomLocation()->String {
         let allZones = NSTimeZone.knownTimeZoneNames

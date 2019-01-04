@@ -13,11 +13,17 @@ import CoreData
 
 class TvcDemo: UITableViewController {
     
+    private let appDelegate=UIApplication.shared.delegate as! AppDelegate
     private let context=(UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let request = NSFetchRequest<Person>(entityName:"Person")
     lazy var frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     
+    func save(){
+        appDelegate.saveContext()
+    }
+    
     func updateFrc(){
+        save()
         do {
             try frc.performFetch()
         } catch {
