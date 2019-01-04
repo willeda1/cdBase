@@ -21,9 +21,15 @@ class ViewController: UIViewController {
         updateDisplay()
     }
     
+    func randomLocation()->String {
+        let allZones = NSTimeZone.knownTimeZoneNames
+        let entry = allZones.randomElement()!
+        return entry.components(separatedBy: "/")[1].replacingOccurrences(of: "_", with: " ")
+    }
+    
     @IBAction func add(_ sender: Any) {
         let person = Person(context: context)
-        person.name = "david @ \(Date())"
+        person.name = randomLocation()
         person.date=Date()
         display.text="\([Person]())"
         updateDisplay()
