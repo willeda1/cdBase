@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6342395421DFD08A008287E8 /* SearchBarTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6342395321DFD08A008287E8 /* SearchBarTableTableViewController.swift */; };
 		6364651621DA1BFD0034C81C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364651521DA1BFD0034C81C /* AppDelegate.swift */; };
 		6364651821DA1BFD0034C81C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364651721DA1BFD0034C81C /* ViewController.swift */; };
 		6364651B21DA1BFD0034C81C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6364651921DA1BFD0034C81C /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6342395321DFD08A008287E8 /* SearchBarTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableTableViewController.swift; sourceTree = "<group>"; };
 		6364651221DA1BFD0034C81C /* cdBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6364651521DA1BFD0034C81C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6364651721DA1BFD0034C81C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				63BE05B021DB803100DBF195 /* TvcDemo.swift */,
 				63BE05C221DE072B00DBF195 /* VcTable2.swift */,
 				63BE05BE21DE067F00DBF195 /* TvcTable.swift */,
+				6342395321DFD08A008287E8 /* SearchBarTableTableViewController.swift */,
 				6364651F21DA1BFF0034C81C /* Assets.xcassets */,
 				6364652121DA1BFF0034C81C /* LaunchScreen.storyboard */,
 				6364652421DA1BFF0034C81C /* Info.plist */,
@@ -162,6 +165,7 @@
 				63BE05AE21DAC94100DBF195 /* Person+CoreDataClass.swift in Sources */,
 				63BE05B121DB803100DBF195 /* TvcDemo.swift in Sources */,
 				6364651821DA1BFD0034C81C /* ViewController.swift in Sources */,
+				6342395421DFD08A008287E8 /* SearchBarTableTableViewController.swift in Sources */,
 				63BE05C321DE072B00DBF195 /* VcTable2.swift in Sources */,
 				6364651621DA1BFD0034C81C /* AppDelegate.swift in Sources */,
 				6364651E21DA1BFD0034C81C /* cdBase.xcdatamodeld in Sources */,
