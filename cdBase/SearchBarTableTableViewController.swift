@@ -46,7 +46,7 @@ class SearchBarTableTableViewController: UITableViewController {
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.autocapitalizationType=UITextAutocapitalizationType.none
+        searchController.searchBar.autocapitalizationType = .none
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
