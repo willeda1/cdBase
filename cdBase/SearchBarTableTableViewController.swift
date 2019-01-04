@@ -9,43 +9,60 @@
 import UIKit
 import CoreData
 
-class SearchBarTableTableViewController: UITableViewController, UISearchBarDelegate {
-
+class SearchBarTableTableViewController: UITableViewController {
+    
     private let appDelegate=UIApplication.shared.delegate as! AppDelegate
     private let context=(UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let request = NSFetchRequest<Person>(entityName:"Person")
     lazy var frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     
-    // MARK: search bar delegate
-    
-   
-    // MARK: rest of code
+    let searchController = UISearchController(searchResultsController: nil)
     
     func save(){
         appDelegate.saveContext()
     }
     
-    func updateFrc(){
+    func updateFrc(filter : String? = nil){
+        
         save()
+        
+        if let filter = filter {
+            frc.fetchRequest.predicate=NSPredicate(format:"name CONTAINS[c] %@",filter)
+        } else {
+            frc.fetchRequest.predicate=nil
+        }
+        
         do {
             try frc.performFetch()
         } catch {
             print("whoops - FRC updated failed")
         }
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         
+        
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
+        // from https://stackoverflow.com/questions/48361507/uisearchcontroller-not-shown
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        request.sortDescriptors=[NSSortDescriptor(key: "date", ascending: true)]
         
+        request.sortDescriptors=[NSSortDescriptor(key: "date", ascending: true)]
         frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
         updateFrc()
         
     }
@@ -119,22 +136,21 @@ class SearchBarTableTableViewController: UITableViewController, UISearchBarDeleg
     }
     
     
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+}
 
+// MARK: this is new
+
+extension SearchBarTableTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let text=searchController.searchBar.text!
+        
+        if text.isEmpty {
+            updateFrc()
+        } else {
+            updateFrc(filter:text)
+        }
+    }
 }
